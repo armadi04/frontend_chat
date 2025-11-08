@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+    :root {
+        /* Soft purple theme for forum chat */
+        --background: 240 20% 98%;
+        --foreground: 240 10% 20%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 20%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 20%;
+        --primary: 260 60% 65%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 240 20% 95%;
+        --secondary-foreground: 240 10% 30%;
+        --muted: 240 20% 96%;
+        --muted-foreground: 240 8% 55%;
+        --accent: 280 50% 70%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 15% 90%;
+        --input: 240 15% 92%;
+        --ring: 260 60% 65%;
+        --radius: 0.75rem;
+        
+        /* Custom forum colors */
+        --forum-purple: 260 60% 65%;
+        --forum-purple-light: 260 50% 85%;
+        --forum-purple-dark: 260 70% 55%;
+        --chat-bubble: 0 0% 100%;
+        --chat-bubble-own: 260 50% 95%;
+        --avatar-bg: 260 40% 75%;
+        
+        /* Gradients */
+        --gradient-primary: linear-gradient(135deg, hsl(260 60% 70%) 0%, hsl(280 50% 75%) 100%);
+        --gradient-bg: linear-gradient(180deg, hsl(240 30% 98%) 0%, hsl(260 20% 96%) 100%);
+        
+        /* Shadows */
+        --shadow-sm: 0 1px 3px 0 hsl(240 10% 20% / 0.05);
+        --shadow-md: 0 4px 12px 0 hsl(240 10% 20% / 0.08);
+        --shadow-lg: 0 8px 24px 0 hsl(240 10% 20% / 0.12);
+        
+        /* Transitions */
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .dark {
+        --background: 240 10% 10%;
+        --foreground: 0 0% 98%;
+        --card: 240 10% 12%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 10% 12%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 260 60% 70%;
+        --primary-foreground: 240 10% 10%;
+        --secondary: 240 10% 18%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 10% 18%;
+        --muted-foreground: 240 8% 65%;
+        --accent: 280 50% 65%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 10% 20%;
+        --input: 240 10% 20%;
+        --ring: 260 60% 70%;
+        
+        --chat-bubble: 240 10% 15%;
+        --chat-bubble-own: 260 30% 25%;
+        --avatar-bg: 260 40% 40%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .gradient-primary {
+        background: var(--gradient-primary);
+    }
+    
+    .gradient-bg {
+        background: var(--gradient-bg);
+    }
+    
+    .shadow-elegant {
+        box-shadow: var(--shadow-md);
+    }
+    
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
